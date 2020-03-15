@@ -2,19 +2,12 @@ var start = document.querySelector(".start")
 var timer = document.querySelector(".timer")
 var begin = document.querySelector(".begin")
 var score = document.querySelector(".score")
-var questions = [
-    { q: "Commonly used data types DO NOT include", a: "alerts" },
-    { q: "The condition in an if/else statement is enclosed within_____.", a: "parentheses" },
-    { q: "Array in JavaScript can be used to store_____.", a: "all of the above" },
-    { q: "String values must be enclosed within_____when being assigned to variables.", a: "quotes" },
-    { q: "A very useful tool used during development and debugging for printing content to the debugger is:", a: "console log" },
-]
 var questionOne = document.getElementById("q1")
 var answer1 = document.querySelector(".button1")
 var answer2 = document.querySelector(".button2")
 var answer3 = document.querySelector(".button3")
 var answer4 = document.querySelector(".button4")
- document.querySelector(".button2").value = "HTML";
+document.querySelector(".button2").value = "HTML";
 document.querySelector(".button1").value = "JavaScript";
 document.querySelector(".button3").value = "batman";
 document.querySelector(".button4").value = "CSS";
@@ -60,11 +53,12 @@ document.querySelector(".button4").value = "CSS";
         answer4.textContent = "CSS"
     })
    
+    var correctAnswer1 = answer2
 
 // if correct button is clicked, move to next question
-answer2.addEventListener("click",function (){
-    
-    if (answer2.value === "HTML"){
+if (correctAnswer1.value === "HTML"){
+correctAnswer1.addEventListener("click",function (){
+     console.log(correctAnswer1)
     q1.textContent = "What does API stand for?"
     answer1.textContent = "Artifical Programming Intelligence"
     answer2.textContent = "Always Plan Intelligently"
@@ -73,72 +67,204 @@ answer2.addEventListener("click",function (){
     userScore++
     score.textContent = "Your score is " + userScore
     document.querySelector(".button2").value = "Always Plan Intelligently"; 
-    document.querySelector(".button1").value = "Artifcial Programming Intelligence"
+    document.querySelector(".button1").value = "Artificial Programming Intelligence"
     document.querySelector(".button3").value = "API"
-    document.querySelector("button4").value = "Artic Patrol Incorporated"
- }})
+    document.querySelector(".button4").value = "Artic Patrol Incorporated"
+   
+    })
+};
 //  answer2.removeEventListener("click")
 // update user's score
-answer1.addEventListener("click", function(){
-    if (answer1.value === "JavaScript"){
+var incorrectAnswer1 = answer1
+incorrectAnswer1.addEventListener("click", function(){
+    if (incorrectAnswer1.value === "JavaScript"){
         q1.textContent = "What does API stand for?"
         answer1.textContent = "Artifical Programming Intelligence"
         answer2.textContent = "Always Plan Intelligently"
         answer3.textContent = "Artificial Programming Interface"
-        answer4.textContent = " Artic Patrol Incorporated "
+        answer4.textContent = "Artic Patrol Incorporated"
         missed++
         score.textContent = "Your score is " +userScore
         document.querySelector(".button2").value = "Always Plan Intelligently"; 
         document.querySelector(".button1").value = "Artifcial Programming Intelligence"
         document.querySelector(".button3").value = "API"
-        document.querySelector("button4").value = "Artic Patrol Incorporated"
+        document.querySelector(".button4").value = "Artic Patrol Incorporated"
+        removeEventListener(answer1)
     }
 })
-
-answer3.addEventListener("click", function(){
-    if (answer3.value === "batman"){
+var incorrectAnswer2 = answer3
+incorrectAnswer2.addEventListener("click", function(){
+    if (incorrectAnswer2.value === "batman"){
         q1.textContent = "What does API stand for?"
         answer1.textContent = "Artifical Programming Intelligence"
         answer2.textContent = "Always Plan Intelligently"
         answer3.textContent = "Artificial Programming Interface"
-        answer4.textContent = " Artic Patrol Incorporated "
+        answer4.textContent = "Artic Patrol Incorporated"
         missed++
         score.textContent = "Your score is " +userScore
         document.querySelector(".button2").value = "Always Plan Intelligently"; 
-        document.querySelector(".button1").value = "Artifcial Programming Intelligence"
+        document.querySelector(".button1").value = "Artificial Programming Intelligence"
         document.querySelector(".button3").value = "API"
-        document.querySelector("button4").value = "Artic Patrol Incorporated"
+        document.querySelector(".button4").value = "Artic Patrol Incorporated"
+        removeEventListener(answer3)
     }
 })
-
-answer4.addEventListener("click", function(){
-    if (answer4.value === "CSS"){
+var incorrectAnswer3 = answer4
+incorrectAnswer3.addEventListener("click", function(){
+    if (incorrectAnswer3.value === "CSS"){
         q1.textContent = "What does API stand for?"
         answer1.textContent = "Artifical Programming Intelligence"
         answer2.textContent = "Always Plan Intelligently"
         answer3.textContent = "Artificial Programming Interface"
-        answer4.textContent = " Artic Patrol Incorporated "
+        answer4.textContent = "Artic Patrol Incorporated"
         missed++
         score.textContent = "Your score is " +userScore
         document.querySelector(".button2").value = "Always Plan Intelligently"; 
-        document.querySelector(".button1").value = "Artifcial Programming Intelligence"
+        document.querySelector(".button1").value = "Artificial Programming Intelligence"
         document.querySelector(".button3").value = "API"
-        document.querySelector("button4").value = "Artic Patrol Incorporated"
+        document.querySelector(".button4").value = "Artic Patrol Incorporated"
+        removeEventListener(answer4)
     }
 })
 // if incorrect button is clicekd, also move to next queston
 
-answer3.addEventListener("click", function(){
-    if (answer3.value === "API"){
-        q1.textContent = "testing some stuff"
-        answer1.textContent = "test 1234"
-        answer2.textContent = "testing 109"
-        answer3.textContent = "le test"
-        answer4.textContent = " rahrahrah "
+var correctAnswer2 = answer3
+correctAnswer2.addEventListener("click", function(){
+    if (correctAnswer2.value === "API"){
+        q1.textContent = "Which HTML tag creates a bulleted list"
+        answer1.textContent = "ol"
+        answer2.textContent = "UL"
+        answer3.textContent = "BR"
+        answer4.textContent = "calculus"
         userScore++
         score.textContent = "Your score is " + userScore
         document.querySelector(".button3").value = "BR"
+        document.querySelector(".button1").value = "ol"
+        document.querySelector(".button2").value = "ul"
+        document.querySelector(".button4").value = "calculus"        
+       
+    } 
+})
+var incorrectAnswer4 = answer1
+incorrectAnswer4.addEventListener("click", function(){
+    if (incorrectAnswer4.value === "Artificial Programming Intelligence"){
+        q1.textContent = "Which HTML tag creates a bulleted list"
+        answer1.textContent = "ol"
+        answer2.textContent = "UL"
+        answer3.textContent = "BR"
+        answer4.textContent = "calculus"
+        missed++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "BR"
+        document.querySelector(".button1").value = "ol"
+        document.querySelector(".button2").value = "ul"
+        document.querySelector(".button4").value = "calculus"  
+       
+    }
+})
+var incorrectAnswer5 = answer2
 
+incorrectAnswer5.addEventListener("click", function(){
+    if (incorrectAnswer5.value === "Always Plan Intelligently"){
+        console.log(answer2.value)
+        q1.textContent = "Which HTML tag creates a bulleted list"
+        answer1.textContent = "ol"
+        answer2.textContent = "UL"
+        answer3.textContent = "BR"
+        answer4.textContent = "calculus"
+        missed++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "BR"
+        document.querySelector(".button1").value = "ol"
+        document.querySelector(".button2").value = "ul"
+        document.querySelector(".button4").value = "calculus"   
+       
+    }
+})
+var incorrectAnswer6 = answer4
+incorrectAnswer6.addEventListener("click", function(){
+    if (incorrectAnswer6.value === "Artic Patrol Incorporated"){
+        q1.textContent = "Which HTML tag creates a bulleted list"
+        answer1.textContent = "ol"
+        answer2.textContent = "UL"
+        answer3.textContent = "BR"
+        answer4.textContent = "calculus"
+        missed++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "BR"
+        document.querySelector(".button1").value = "ol"
+        document.querySelector(".button2").value = "ul"
+        document.querySelector(".button4").value = "calculus"   
+     
+    }
+})
+    function findButton(event) {
+        var target = event.target;
+        console.log(target.value);
+    }findButton()
+  var correctAnswer3 = answer2
+correctAnswer3.addEventListener("click", function(){
+    if (correctAnswer3.value === "ul"){
+        console.log(answer2.value)
+        q1.textContent = "Which is the correct HTML tag for making a line break?"
+        answer1.textContent = "br"
+        answer2.textContent = "break"
+        answer3.textContent = "linestop"
+        answer4.textContent = "bk"
+        userScore++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "br"
+        document.querySelector(".button1").value = "break"
+        document.querySelector(".button2").value = "linestop"
+        document.querySelector(".button4").value = "bk" 
+          
+    }
+})
+incorrectAnswer7 = answer1
+incorrectAnswer7.addEventListener("click", function(){
+    if (incorrectAnswer7.value === "ol"){
+        q1.textContent = "Which is the correct HTML tag for making a line break?"
+        answer1.textContent = "br"
+        answer2.textContent = "break"
+        answer3.textContent = "linestop"
+        answer4.textContent = "bk"
+        missed ++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "br"
+        document.querySelector(".button1").value = "break"
+        document.querySelector(".button2").value = "linestop"
+        document.querySelector(".button4").value = "bk"   
+    }
+})
+
+answer3.addEventListener("click", function(){
+    if (answer3.value === "BR"){
+        q1.textContent = "Which is the correct HTML tag for making a line break?"
+        answer1.textContent = "br"
+        answer2.textContent = "break"
+        answer3.textContent = "linestop"
+        answer4.textContent = "bk"
+        missed ++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "br"
+        document.querySelector(".button1").value = "break"
+        document.querySelector(".button2").value = "linestop"
+        document.querySelector(".button4").value = "bk"   
+    }
+})
+answer4.addEventListener("click", function(){
+    if (answer4.value === "calculus"){
+        q1.textContent = "Which is the correct HTML tag for making a line break?"
+        answer1.textContent = "br"
+        answer2.textContent = "break"
+        answer3.textContent = "linestop"
+        answer4.textContent = "bk"
+        missed ++
+        score.textContent = "Your score is " + userScore
+        document.querySelector(".button3").value = "br"
+        document.querySelector(".button1").value = "break"
+        document.querySelector(".button2").value = "linestop"
+        document.querySelector(".button4").value = "bk"   
     }
 })
 
@@ -146,31 +272,6 @@ answer3.addEventListener("click", function(){
 
 
 
-
-
-function secondQuestion(){
-    
-    q1.textContent = "What does API stand for?"
-    answer1.textContent = "Artifical Programming Intelligence"
-    answer2.textContent = "Always Plan Intelligently"
-    answer3.textContent = "Artificial Programming Interface"
-    answer4.textContent = " Artic Patrol Incorporated "
-    userScore++
-    score.textContent = "Your score is " + userScore
-    
-}
-
-function thirdQuestion(){
-q1.textContent = "10101010101"
-answer1.textContent = "100"
-answer2.textContent = "yes"
-answer3.textContent = "bo-00"
-answer4.textContent = " 00"
-userScore++
-score.textContent = "Your score is " + userScore
-
-
-}
 // and the user is presented with a question
 
 // when the user answers this question
@@ -183,4 +284,6 @@ score.textContent = "Your score is " + userScore
 //  save the users score
 //  show the users scores
 console.log(answer2.value)
-console
+console.log(answer1.value)
+console.log(answer3.value)
+console.log(answer4.value)
