@@ -75,9 +75,9 @@ document.querySelector("#button20").value = "h1";
           if (timeLeft === 0) {
               clearInterval(timeInterval)
               timer.textContent = "you're out of time!"
-              var initials = prompt("Enter you initials!")
+             
               
-              return
+              
             }
         }, 1000)
         
