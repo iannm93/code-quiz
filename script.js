@@ -4,47 +4,47 @@ var begin = document.querySelector(".begin")
 var score = document.querySelector(".score")
 var missed = document.querySelector(".missed")
 var questionOne = document.getElementById("q1")
-var answer1 = document.querySelector(".button1")
-var answer2 = document.querySelector(".button2")
-var answer3 = document.querySelector(".button3")
-var answer4 = document.querySelector(".button4")
-var answer5 = document.querySelector(".button5")
-var answer6 = document.querySelector(".button6")
-var answer7 = document.querySelector(".button7")
-var answer8 = document.querySelector(".button8")
-var answer9 = document.querySelector(".button9")
-var answer10 = document.querySelector(".button10")
-var answer11= document.querySelector(".button11")
-var answer12= document.querySelector(".button12")
-var answer13 = document.querySelector(".button13")
-var answer14 = document.querySelector(".button14")
-var answer15= document.querySelector(".button15")
-var answer16= document.querySelector(".button16")
-var answer17 = document.querySelector(".button17")
-var answer18 = document.querySelector(".button18")
-var answer19= document.querySelector(".button19")
-var answer20= document.querySelector(".button20")
+var answer1 = document.querySelector("#button1")
+var answer2 = document.querySelector("#button2")
+var answer3 = document.querySelector("#button3")
+var answer4 = document.querySelector("#button4")
+var answer5 = document.querySelector("#button5")
+var answer6 = document.querySelector("#button6")
+var answer7 = document.querySelector("#button7")
+var answer8 = document.querySelector("#button8")
+var answer9 = document.querySelector("#button9")
+var answer10 = document.querySelector("#button10")
+var answer11= document.querySelector("#button11")
+var answer12= document.querySelector("#button12")
+var answer13 = document.querySelector("#button13")
+var answer14 = document.querySelector("#button14")
+var answer15= document.querySelector("#button15")
+var answer16= document.querySelector("#button16")
+var answer17 = document.querySelector("#button17")
+var answer18 = document.querySelector("#button18")
+var answer19= document.querySelector("#button19")
+var answer20= document.querySelector("#button20")
 
-document.querySelector(".button1").value = "JavaScript";
-document.querySelector(".button2").value = "HTML";
-document.querySelector(".button3").value = "batman";
-document.querySelector(".button4").value = "CSS";
-document.querySelector(".button5").value = "Artificial Programming Intelligence";
-document.querySelector(".button6").value = "Always Plan Intelligently";
-document.querySelector(".button7").value = "API";
-document.querySelector(".button8").value = "Artic Patrol Incorporated";
-document.querySelector(".button9").value = "OL";
-document.querySelector(".button10").value = "UL";
-document.querySelector(".button11").value = "TL";
-document.querySelector(".button12").value = "calculus";
-document.querySelector(".button13").value = "br";
-document.querySelector(".button14").value = "break";
-document.querySelector(".button15").value = "linestop";
-document.querySelector(".button16").value = "bk";
-document.querySelector(".button17").value = "heading";
-document.querySelector(".button18").value = "head";
-document.querySelector(".button19").value = "h6";
-document.querySelector(".button20").value = "h1";
+document.querySelector("#button1").value = "JavaScript";
+document.querySelector("#button2").value = "HTML";
+document.querySelector("#button3").value = "batman";
+document.querySelector("#button4").value = "CSS";
+document.querySelector("#button5").value = "Artificial Programming Intelligence";
+document.querySelector("#button6").value = "Always Plan Intelligently";
+document.querySelector("#button7").value = "API";
+document.querySelector("#button8").value = "Artic Patrol Incorporated";
+document.querySelector("#button9").value = "OL";
+document.querySelector("#button10").value = "UL";
+document.querySelector("#button11").value = "TL";
+document.querySelector("#button12").value = "calculus";
+document.querySelector("#button13").value = "br";
+document.querySelector("#button14").value = "break";
+document.querySelector("#button15").value = "linestop";
+document.querySelector("#button16").value = "bk";
+document.querySelector("#button17").value = "heading";
+document.querySelector("#button18").value = "head";
+document.querySelector("#button19").value = "h6";
+document.querySelector("#button20").value = "h1";
 
 
 
@@ -75,6 +75,8 @@ document.querySelector(".button20").value = "h1";
           if (timeLeft === 0) {
               clearInterval(timeInterval)
               timer.textContent = "you're out of time!"
+              var initials = prompt("Enter you initials!")
+              
               return
             }
         }, 1000)
