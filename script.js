@@ -380,6 +380,28 @@ if (answer20.value ==="h1"){
        score.textContent = "Your score is  " + userScore
     })
 }
+var formEl = document.querySelector("form");
+var itemInput = document.querySelector("#item-input");
+var list = JSON.parse(localStorage.getItem("list"));
+
+if (list === null) {
+  list = [];
+}
+
+formEl.addEventListener("submit", function(event) {
+  event.preventDefault();
+  // get input
+  var newItem = itemInput.value.trim();
+ 
+  // add input to list
+  list.push(newItem)
+
+  // add to local storage
+  localStorage.setItem("list", JSON.stringify(list))
+
+  // navigate to list page
+  document.location.href = "./list.html";
+});
 
 
 
@@ -395,10 +417,3 @@ if (answer20.value ==="h1"){
 
 //  save the users score
 //  show the users scores
-console.log(answer2.value)
-console.log(answer1.value)
-console.log(answer3.value)
-console.log(answer4.value)
-function timeLeftSub(){
-    timeLeft-5
-}
