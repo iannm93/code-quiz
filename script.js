@@ -29,9 +29,9 @@ document.querySelector(".button1").value = "JavaScript";
 document.querySelector(".button2").value = "HTML";
 document.querySelector(".button3").value = "batman";
 document.querySelector(".button4").value = "CSS";
-document.querySelector(".button5").value = "Artifical Programming Intelligence";
+document.querySelector(".button5").value = "Artificial Programming Intelligence";
 document.querySelector(".button6").value = "Always Plan Intelligently";
-document.querySelector(".button7").value = "Artifical Programming Interface";
+document.querySelector(".button7").value = "API";
 document.querySelector(".button8").value = "Artic Patrol Incorporated";
 document.querySelector(".button9").value = "OL";
 document.querySelector(".button10").value = "UL";
@@ -60,7 +60,7 @@ document.querySelector(".button20").value = "h1";
   var q5 = document.getElementById("q5")
   
   var userScore = 0
-  var missed = 0
+  var missedScore = 0
   
   
   // when user opens the page and cliks the start button
@@ -75,6 +75,7 @@ document.querySelector(".button20").value = "h1";
           if (timeLeft === 0) {
               clearInterval(timeInterval)
               timer.textContent = "you're out of time!"
+              return
             }
         }, 1000)
         
@@ -88,7 +89,7 @@ document.querySelector(".button20").value = "h1";
         answer3.textContent = "batman"
         answer4.textContent = "CSS"
         q2.textContent = "What does API stand for"
-        answer5.textContent = "Artifical Programming Intelligence"
+        answer5.textContent = "Artificial Programming Intelligence"
         answer6.textContent = "Always Plan Intelligently"
         answer7.textContent = "Artifical Programming Interface"
         answer8.textContent = "Artic Patrol Incorporated"
@@ -107,20 +108,21 @@ document.querySelector(".button20").value = "h1";
         answer18.textContent = "head"
         answer19.textContent = "h6"
         answer20.textContent = "h1"
+        score.textContent = 0
+        missed.textContent = 0
         
     })
    
-    var correctAnswer1 = answer2
 
 // if correct button is clicked, move to next question
-if (correctAnswer1.value === "HTML"){
-correctAnswer1.addEventListener("click",function (){
-     console.log(correctAnswer1)
+if (answer2.value === "HTML"){
+answer2.addEventListener("click",function (){
+    
     q1.textContent = "Correct!"
-    answer1.textContent = ""
-    answer2.textContent = ""
-    answer3.textContent = ""
-    answer4.textContent = ""
+    answer1.parentNode.removeChild(answer1)
+    answer2.parentNode.removeChild(answer2)
+    answer3.parentNode.removeChild(answer3)
+    answer4.parentNode.removeChild(answer4)
     userScore++
     score.textContent = "Your score is " + userScore
   
@@ -133,177 +135,249 @@ correctAnswer1.addEventListener("click",function (){
 if (answer1.value === "JavaScript"){
 answer1.addEventListener("click", function(){
         q1.textContent = "Wrong!"
-        answer1.textContent = ""
-        answer2.textContent = ""
-        answer3.textContent = ""
-        answer4.textContent = ""
-        missed++
-        userScore.textContent = "Your score is " + userScore
-        missed.textContent = "You've missed " + missed
-       
+        answer1.parentNode.removeChild(answer1)
+        answer2.parentNode.removeChild(answer2)
+        answer3.parentNode.removeChild(answer3)
+        answer4.parentNode.removeChild(answer4)
+        missedScore++
+        score.textContent = "Your score is " + userScore
+        missed.textContent = "You've missed " + missedScore
+        timeLeftSub()
     })
     }
 
 if (answer3.value === "batman"){
 answer3.addEventListener("click", function(){
         q1.textContent = "Wrong!"
-        answer1.textContent = ""
-        answer2.textContent = ""
-        answer3.textContent = ""
-        answer4.textContent = ""
-        missed++
-        userScore.textContent = "Your score is " + userScore
-        missed.textContent = "You've missed " + missed
-        
+        answer1.parentNode.removeChild(answer1)
+        answer2.parentNode.removeChild(answer2)
+        answer3.parentNode.removeChild(answer3)
+        answer4.parentNode.removeChild(answer4)
+        missedScore++
+        score.textContent = "Your score is " + userScore
+        missed.textContent = "You've missed " + missedScore
+        timeLeft-15
     })
     }
 
 if (answer4.value === "CSS"){
 answer4.addEventListener("click", function(){
         q1.textContent = "Wrong!"
-        answer1.textContent = ""
-        answer2.textContent = ""
-        answer3.textContent = ""
-        answer4.textContent = ""
-        missed++
-        missed.textContent = "You've missed " + missed
-        userScore.textContent =  "Your score is "  + userScore
+        answer1.parentNode.removeChild(answer1)
+        answer2.parentNode.removeChild(answer2)
+        answer3.parentNode.removeChild(answer3)
+        answer4.parentNode.removeChild(answer4)
+        missedScore++
+        missed.textContent = "You've missed " + missedScore
+        score.textContent =  "Your score is "  + userScore
     })
     }
 // if incorrect button is clicekd, also move to next queston
 
 
-if (answer3.value === "API"){
-answer3.addEventListener("click", function(){
+if (answer7.value === "API"){
+answer7.addEventListener("click", function(){
         q2.textContent = "Correct!"
-        answer5.textContent = ""
-        answer6.textContent = ""
-        answer7.textContent = ""
-        answer8.textContent = ""
+        answer5.parentNode.removeChild(answer5)
+        answer6.parentNode.removeChild(answer6)
+        answer7.parentNode.removeChild(answer7)
+        answer8.parentNode.removeChild(answer8)
         userScore++
-        userScore.textContent = "Your score is " +userScore
+        score.textContent = "Your score is " +userScore
             
        
     })
     } 
-var incorrectAnswer4 = answer1
-if (incorrectAnswer4.value === "Artificial Programming Intelligence"){
-incorrectAnswer4.addEventListener("click", function(){
-        q2.textContent = "Which HTML tag creates a bulleted list"
-        answer5.textContent = ""
-        answer6.textContent = ""
-        answer7.textContent = ""
-        answer8.textContent = ""
-        missed++
+
+if (answer5.value === "Artificial Programming Intelligence"){
+answer5.addEventListener("click", function(){
+        q2.textContent = "Wrong!"
+        answer5.parentNode.removeChild(answer5)
+        answer6.parentNode.removeChild(answer6)
+        answer7.parentNode.removeChild(answer7)
+        answer8.parentNode.removeChild(answer8)
+        missedScore++
+        missed.textContent = "You've missed " + missedScore
+        
         
     })
     }
 var incorrectAnswer5 = answer2
 
-if (incorrectAnswer5.value === "Always Plan Intelligently"){
-incorrectAnswer5.addEventListener("click", function(){
-        console.log(answer2.value)
-        q1.textContent = "Which HTML tag creates a bulleted list"
-        answer1.textContent = "ol"
-        answer2.textContent = "UL"
-        answer3.textContent = "BR"
-        answer4.textContent = "calculus"
-        missed++
-        score.textContent = "Your score is " + userScore
-        document.querySelector(".button3").value = "BR"
-        document.querySelector(".button1").value = "ol"
-        document.querySelector(".button2").value = "ul"
-        document.querySelector(".button4").value = "calculus"   
+if (answer6.value === "Always Plan Intelligently"){
+answer6.addEventListener("click", function(){
+       
+        q2.textContent = "Wrong!"
+        answer5.parentNode.removeChild(answer5)
+        answer6.parentNode.removeChild(answer6)
+        answer7.parentNode.removeChild(answer7)
+        answer8.parentNode.removeChild(answer8)
+        missedScore++
+        missed.textContent = "You've missed "  + missedScore
        
     })
     }
-var incorrectAnswer6 = answer4
-if (incorrectAnswer6.value === "Artic Patrol Incorporated"){
-incorrectAnswer6.addEventListener("click", function(){
-        q1.textContent = "Which HTML tag creates a bulleted list"
-        answer1.textContent = "ol"
-        answer2.textContent = "UL"
-        answer3.textContent = "BR"
-        answer4.textContent = "calculus"
-        missed++
-        score.textContent = "Your score is " + userScore
-        document.querySelector(".button3").value = "BR"
-        document.querySelector(".button1").value = "ol"
-        document.querySelector(".button2").value = "ul"
-        document.querySelector(".button4").value = "calculus"   
-     
+
+if (answer8.value === "Artic Patrol Incorporated"){
+answer8.addEventListener("click", function(){
+        q2.textContent = "Wrong!"
+        answer5.parentNode.removeChild(answer5)
+        answer6.parentNode.removeChild(answer6)
+        answer7.parentNode.removeChild(answer7)
+        answer8.parentNode.removeChild(answer8)
+        missedScore++
+        missed.textContent = "You've missed " + missedScore
     })
     }
-    function findButton(event) {
-        var target = event.target;
-        console.log(target.value);
-    }findButton()
-  var correctAnswer3 = answer2
-  if (correctAnswer3.value === "ul"){
-correctAnswer3.addEventListener("click", function(){
-        console.log(answer2.value)
-        q1.textContent = "Which is the correct HTML tag for making a line break?"
-        answer1.textContent = "br"
-        answer2.textContent = "break"
-        answer3.textContent = "linestop"
-        answer4.textContent = "bk"
+   
+ 
+  if (answer10.value === "UL"){
+answer10.addEventListener("click", function(){
+    
+        q3.textContent = "Correct!"
+        answer9.parentNode.removeChild(answer9)
+        answer10.parentNode.removeChild(answer10)
+        answer11.parentNode.removeChild(answer11)
+        answer12.parentNode.removeChild(answer12)
         userScore++
         score.textContent = "Your score is " + userScore
-        document.querySelector(".button3").value = "br"
-        document.querySelector(".button1").value = "break"
-        document.querySelector(".button2").value = "linestop"
-        document.querySelector(".button4").value = "bk" 
+       
           
     })
     }
-incorrectAnswer7 = answer1
-if (incorrectAnswer7.value === "ol"){
-incorrectAnswer7.addEventListener("click", function(){
-        q1.textContent = "Which is the correct HTML tag for making a line break?"
-        answer1.textContent = "br"
-        answer2.textContent = "break"
-        answer3.textContent = "linestop"
-        answer4.textContent = "bk"
-        missed ++
-        score.textContent = "Your score is " + userScore
-        document.querySelector(".button3").value = "br"
-        document.querySelector(".button1").value = "break"
-        document.querySelector(".button2").value = "linestop"
-        document.querySelector(".button4").value = "bk"   
+    
+if (answer11.value === "TL"){
+    answer11.addEventListener("click", function(){
+        q3.textContent = "Wrong!"
+        answer9.parentNode.removeChild(answer9)
+        answer10.parentNode.removeChild(answer10)
+        answer11.parentNode.removeChild(answer11)
+        answer12.parentNode.removeChild(answer12)
+        missedScore++
+        missed.textContent = "You've missed " + missedScore
+    })
+}
+
+if (answer9.value === "OL"){
+answer9.addEventListener("click", function(){
+        q3.textContent = "Wrong!"
+        answer9.parentNode.removeChild(answer9)
+        answer10.parentNode.removeChild(answer10)
+        answer11.parentNode.removeChild(answer11)
+        answer12.parentNode.removeChild(answer12)
+        missedScore++
+        missed.textContent = "You've missed " + missedScore
     })
     }
 
-    if (answer3.value === "BR"){
-answer3.addEventListener("click", function(){
-        q1.textContent = "Which is the correct HTML tag for making a line break?"
-        answer1.textContent = "br"
-        answer2.textContent = "break"
-        answer3.textContent = "linestop"
-        answer4.textContent = "bk"
-        missed ++
+    if (answer13.value === "br"){
+answer13.addEventListener("click", function(){
+        q4.textContent = "Correct!"
+        answer13.parentNode.removeChild(answer13)
+        answer14.parentNode.removeChild(answer14)
+        answer15.parentNode.removeChild(answer15)
+        answer16.parentNode.removeChild(answer16)
+        userScore ++
         score.textContent = "Your score is " + userScore
-        document.querySelector(".button3").value = "br"
-        document.querySelector(".button1").value = "break"
-        document.querySelector(".button2").value = "linestop"
-        document.querySelector(".button4").value = "bk"   
     })
     }
-    if (answer4.value === "calculus"){
-answer4.addEventListener("click", function(){
-        q1.textContent = "Which is the correct HTML tag for making a line break?"
-        answer1.textContent = "br"
-        answer2.textContent = "break"
-        answer3.textContent = "linestop"
-        answer4.textContent = "bk"
-        missed ++
-        score.textContent = "Your score is " + userScore
-        document.querySelector(".button3").value = "br"
-        document.querySelector(".button1").value = "break"
-        document.querySelector(".button2").value = "linestop"
-        document.querySelector(".button4").value = "bk"   
+    if (answer12.value === "calculus"){
+answer12.addEventListener("click", function(){
+        q3.textContent = "Wrong!"
+        answer9.parentNode.removeChild(answer9)
+        answer10.parentNode.removeChild(answer10)
+        answer11.parentNode.removeChild(answer11)
+        answer12.parentNode.removeChild(answer12)
+        missedScore ++
+        missed.textContent = "You've missed " + missedScore
     })
+    }
+    if(answer14.value === "break"){
+        answer14.addEventListener("click", function(){
+            q4.textContent = "Wrong!"
+            answer13.parentNode.removeChild(answer13)
+            answer14.parentNode.removeChild(answer14)
+            answer15.parentNode.removeChild(answer15)
+            answer16.parentNode.removeChild(answer16)
+            userScore ++
+            missedScore++
+            missed.textContent= "You've missed " + missedScore
+        })
+    }
+    if(answer15.value === "linestop"){
+        answer15.addEventListener("click", function(){
+            q4.textContent = "Wrong!"
+            answer13.parentNode.removeChild(answer13)
+            answer14.parentNode.removeChild(answer14)
+            answer15.parentNode.removeChild(answer15)
+            answer16.parentNode.removeChild(answer16)
+            userScore ++ 
+            missedScore++
+            missed.textContent= "You've missed " + missedScore
+        })
     }
 
+    if(answer16.value === "bk"){
+        answer16.addEventListener("click", function(){
+            q4.textContent = "Wrong!"
+            answer13.parentNode.removeChild(answer13)
+            answer14.parentNode.removeChild(answer14)
+            answer15.parentNode.removeChild(answer15)
+            answer16.parentNode.removeChild(answer16)
+            userScore ++
+            missedScore++
+            missed.textContent= "You've missed " + missedScore
+        })
+    }
+
+    if(answer17.value === "heading"){
+        answer17.addEventListener("click", function(){
+            q5.textContent = "Wrong!"
+            answer17.parentNode.removeChild(answer17)
+            answer18.parentNode.removeChild(answer18)
+            answer19.parentNode.removeChild(answer19)
+            answer20.parentNode.removeChild(answer20)
+            missedScore ++
+            missed.textContent = "You've missed " + missedScore
+        })
+    }
+
+ if (answer18.value ==="head"){
+     answer18.addEventListener("click", function (){
+        q5.textContent = "Wrong!"
+        answer17.parentNode.removeChild(answer17)
+        answer18.parentNode.removeChild(answer18)
+        answer19.parentNode.removeChild(answer19)
+        answer20.parentNode.removeChild(answer20)
+        missedScore ++
+        missed.textContent = "You've missed " + missedScore
+     })
+ }
+ 
+ if (answer19.value ==="h6"){
+    answer19.addEventListener("click", function (){
+       q5.textContent = "Wrong!"
+       answer17.parentNode.removeChild(answer17)
+       answer18.parentNode.removeChild(answer18)
+       answer19.parentNode.removeChild(answer19)
+       answer20.parentNode.removeChild(answer20)
+       missedScore ++
+       missed.textContent = "You've missed " + missedScore
+    })
+}
+
+
+if (answer20.value ==="h1"){
+    answer20.addEventListener("click", function (){
+       q5.textContent = "Correct!"
+       answer17.parentNode.removeChild(answer17)
+       answer18.parentNode.removeChild(answer18)
+       answer19.parentNode.removeChild(answer19)
+       answer20.parentNode.removeChild(answer20)
+       userScore ++
+       score.textContent = "Your score is  " + userScore
+    })
+}
 
 
 
@@ -323,3 +397,6 @@ console.log(answer2.value)
 console.log(answer1.value)
 console.log(answer3.value)
 console.log(answer4.value)
+function timeLeftSub(){
+    timeLeft-5
+}
