@@ -77,7 +77,7 @@ document.querySelector("#button20").value = "h1";
               timer.textContent = "you're out of time!"
              
               
-              
+            
             }
         }, 1000)
         
